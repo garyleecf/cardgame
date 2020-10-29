@@ -56,7 +56,8 @@ class RefGame(gym.Env):
         # Speaker's Turn
         if self.phase == 0:
             actions[1] = None # Listener does nothing
-            assert isinstance(actions[0], int), f"Speaker's action should be an int, input given: {actions[0]}"
+            assert actions[0] is not None, f"Speaker's action should not be None, input given: {actions[0]}"
+            # assert isinstance(actions[0], int), f"Speaker's action should be an int, input given: {actions[0]}"
         # Listener's Turn
         if self.phase == 1:
             actions[0] = None # Speaker does nothing
