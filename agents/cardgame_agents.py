@@ -1,21 +1,10 @@
 import random
-
-class Agent:
-    def __init__(self):
-        self.reset()
-    def reset(self):
-        self.history = []
-
-    def choose_action(self):
-        return 0
-
-    def observe(self, obs):
-        pass
+from agents import SpeakerAgent, ListenerAgent
 
 
-class SpeakerAgent(Agent):
+class CardGame_SpeakerAgent(SpeakerAgent):
     def __init__(self, n_selection, n_hint_choice=4):
-        super().__init__()
+        super().__init__(n_selection, n_hint_choice)
         self.n_selection = n_selection
         self.n_hint_choice = n_hint_choice
     def reset(self):
@@ -25,12 +14,15 @@ class SpeakerAgent(Agent):
         return 0
 
     def observe(self, speaker_obs):
-        pass
+        self.history.append(speaker_obs)
+        table_cards = speaker_obs['Cards']
+        target_index = speaker_obs['Target']
+        target_card = table_cards[target_index]
 
 
-class ListenerAgent(Agent):
+class CardGame_ListenerAgent(ListenerAgent):
     def __init__(self, n_selection, n_hint_choice=4):
-        super().__init__()
+        super().__init__(n_selection, n_hint_choice)
         self.n_selection = n_selection
         self.n_hint_choice = n_hint_choice
     def reset(self):
@@ -40,4 +32,6 @@ class ListenerAgent(Agent):
         return 0
 
     def observe(self, listener_obs):
-        pass
+        self.history.append(listener_obs)
+        table_cards = listener_obs['Cards']
+        hint = listener_obs['Hint']

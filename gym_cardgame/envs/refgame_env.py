@@ -92,15 +92,20 @@ class RefGame(gym.Env):
     def render(self, mode='human'):
         if self.phase <= 1:
             print_card(self.table_cards)
-            print(f"Speaker's Hint: {self.saved_hint}")
+            if self.phase == 0:
+                print("Speaker has to give a Hint")
+            else:
+                print(f"Speaker's Hint: {self.saved_hint}")
             print()
         else:
             print(f"Listener's Final Choice: {elegent_form(self.table_cards[self.final_choice])}")
             print(f"Target Card: {elegent_form(self.table_cards[self.target_index])}")
+            print()
             won = self.final_choice == self.target_index
             outcome_str = 'won' if won else 'lost'
             print(f"Players {outcome_str}")
-
+            print()
+            
     def close (self):
         pass
 
