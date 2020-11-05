@@ -2,7 +2,7 @@
 
 Instructions:
 ```bash
-git clone [link to this repo]
+git clone https://github.com/garyleecf/cardgame.git
 cd cardgame
 pip install -e .
 ```
