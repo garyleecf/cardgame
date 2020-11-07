@@ -1,11 +1,15 @@
 # Card Game & Chessboard Puzzle
 
 Instructions:
+
 If using an interface like Jupyter Lab/Notebook (and unfamiliar with bash/command prompt):
 * Under "Code", click on "Download Zip". Extract the files and put it on your work directory.
 * Start up Jupyter Lab or Notebook, navigate to this folder
 * Open either "notebook_cardgame.ipynb" or "notebook_puzzle.ipynb" to get started. Make sure to run the first cell to set things up.
 * To create your own "strategies" to play the game, find the "my_agents.py" file (inside agents folder), and modify "observe" and "choose_action" functions accordingly.
+
+
+If you are familiar with Python, use this instead:
 
 ```bash
 git clone https://github.com/garyleecf/cardgame.git
