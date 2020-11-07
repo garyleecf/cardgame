@@ -105,7 +105,7 @@ class RefGame(gym.Env):
             outcome_str = 'won' if won else 'lost'
             print(f"Players {outcome_str}")
             print()
-            
+
     def close (self):
         pass
 

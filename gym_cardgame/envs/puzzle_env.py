@@ -11,7 +11,6 @@ class ChessboardPuzzle(gym.Env):
         super().__init__()
         self.n_cells = n_cells
         self.n_rows = 2**math.ceil(math.log2(n_cells)/2)
-        print(self.n_rows)
 
         # Define action and observation space
         # Ignoring spaces for now

@@ -6,7 +6,7 @@ from gym_cardgame.envs.puzzle_env import ChessboardPuzzle
 _DEBUG = False
 
 def main():
-    env = gym.make('chessboard-puzzle-v0', n_cells=16)
+    env = gym.make('gym_cardgame:chessboard-puzzle-v0', n_cells=16)
      # n_cells defines both the number of "hints" for Speaker as well as the number of tiles to choose from for Listener
 
     # Choose your "players":
